@@ -1,0 +1,15 @@
+﻿@model List<Labb1_MVC.Models.Pokemon>
+
+<div class="text-center">
+    <h1 class="display-4">Välkommen!</h1>
+    <h2>Pokémons:</h2>
+    <ul>
+        @foreach (var pokemon in Model)
+        {
+            <li>
+                <a asp-controller="Pokemon" asp-action="Description" asp-route-id="@pokemon.Id">@pokemon.Name</a>
+            </li>
+        }
+
+    </ul>
+</div>

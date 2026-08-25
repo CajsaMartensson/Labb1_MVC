@@ -1,0 +1,14 @@
+﻿@model Labb1_MVC.Models.Pokemon;
+
+<section>
+    <h2>@Html.DisplayFor(model => model.Name)</h2>
+    <p>Abilites:</p>
+    <p>@Html.DisplayFor(model=> model.Abilites)</p>
+
+    @* <p>@foreach (var ability in Model.Abilites)
+        {
+            <p>@Html.DisplayFor(model => model.Abilites)</p>
+        }
+    </p> *@
+
+</section>
