@@ -11,19 +11,18 @@ namespace Labb1_MVC.Services
             _httpClient = httpClient;
         }
 
-        public async Task<Pokemon> GetPokemon()
+        public async Task<List<Pokemon>> GetPokemon()
         {
             try
             {
-                var response = await _httpClient.GetAsync("");
+                var response = await _httpClient.GetAsync("pokemon?limit=20");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
                 var data = JsonSerializer.Deserialize<PokemonApiResponse>(json);
 
-                
+                return data.Results;
 
-                return data.Name;
             }
             catch (Exception ex)
             {
@@ -33,8 +32,8 @@ namespace Labb1_MVC.Services
 
         internal class PokemonApiResponse()
         {
-            [System.Text.Json.Serialization.JsonPropertyName("result")]
-            public List<Pokemon> Name { get; set; }
+            [System.Text.Json.Serialization.JsonPropertyName("results")]
+            public List<Pokemon>? Results { get; set; }
         }
     }
 }

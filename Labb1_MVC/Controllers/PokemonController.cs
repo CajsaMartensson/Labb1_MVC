@@ -1,4 +1,5 @@
-﻿using Labb1_MVC.Services;
+﻿using Labb1_MVC.Models;
+using Labb1_MVC.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Labb1_MVC.Controllers
@@ -18,9 +19,10 @@ namespace Labb1_MVC.Controllers
             return View(pokemonList);
         }
 
-        //public IActionResult Description(int id)
+        //public IActionResult Description(string name)
         //{
-            
+            //var pokemon = await _pokemonService.GetPokemonByName(name)
+            //return View(pokemon)
         //}
     }
 }
