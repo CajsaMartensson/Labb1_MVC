@@ -8,6 +8,7 @@ namespace Labb1_MVC.Models
         public int Id { get; set; }
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
+
         [JsonPropertyName("height")]
         public int Height { get; set; }
         [JsonPropertyName("weight")]
