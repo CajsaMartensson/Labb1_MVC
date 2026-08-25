@@ -13,8 +13,14 @@ namespace Labb1_MVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            //Lägg till så den visar pokemon
-            return View();
+            var pokemonList = await _pokemonService.GetPokemon();
+
+            return View(pokemonList);
         }
+
+        //public IActionResult Description(int id)
+        //{
+            
+        //}
     }
 }

@@ -1,9 +1,15 @@
 using Labb1_MVC.Middlewares;
+using Labb1_MVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient<IPokemonService, PokemonService>(client =>
+{
+    client.BaseAddress = new Uri("https://pokeapi.co/api/v2/pokemon/");
+    client.Timeout = TimeSpan.FromSeconds(10);
+});
 
 var app = builder.Build();
 
