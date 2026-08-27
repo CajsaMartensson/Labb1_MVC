@@ -7,6 +7,6 @@ namespace Labb1_MVC.Services
     {
         Task<List<Pokemon>> GetPokemon();
 
-        Task<IActionResult> GetPokemonByName(string name);
+        Task<Pokemon> GetPokemonByName(string name);
     }
 }

@@ -6,23 +6,16 @@ namespace Labb1_MVC.Models
     {
         [JsonPropertyName("id")]
         public int Id { get; set; }
-        [JsonPropertyName("name")]
-        public string Name { get; set; } = string.Empty;
-
-        [JsonPropertyName("height")]
-        public int Height { get; set; }
         [JsonPropertyName("weight")]
         public int Weight { get; set; }
+        [JsonPropertyName("height")]
+        public int Height { get; set; }
+        [JsonPropertyName("name")]
+        public string Name { get; set; } = string.Empty;
         [JsonPropertyName("type")]
         public string Type { get; set; } = string.Empty;
-        [JsonPropertyName("attack")]
-        public int Attack { get; set; }
-        [JsonPropertyName("defense")]
-        public int Defense { get; set; }
-        [JsonPropertyName("hp")]
-        public int Hp { get; set; }
-        [JsonPropertyName("speed")]
-        public int Speed { get; set; }
+        [JsonPropertyName("stats")]
+        public List<PokemonStat> Stats { get; set; } = new List<PokemonStat>();
 
     }
 }

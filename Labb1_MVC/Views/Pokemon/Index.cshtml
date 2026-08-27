@@ -11,7 +11,7 @@
         @foreach (var pokemon in Model)
         {
             <li>
-                <a asp-controller="Pokemon" asp-action="Description" asp-route-id="@pokemon.Name">@pokemon.Name</a>
+                <a asp-controller="Pokemon" asp-action="Description" asp-route-name="@pokemon.Name">@pokemon.Name</a>
             </li>
         }
 
