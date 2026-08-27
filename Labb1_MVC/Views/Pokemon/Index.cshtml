@@ -1,7 +1,7 @@
 ﻿@model List<Labb1_MVC.Models.Pokemon>
 
-<div class="text-center">
-    <h1 class="display-4">Välkommen!</h1>
+<div>
+    <h1>Välkommen!</h1>
     <h2>Pokémons:</h2>
 
     @if(Model != null)
@@ -11,7 +11,7 @@
         @foreach (var pokemon in Model)
         {
             <li>
-                <a asp-controller="Pokemon" asp-action="Description" asp-route-name="@pokemon.Name">@pokemon.Name</a>
+                <a asp-controller="Pokemon" asp-action="Detail" asp-route-name="@pokemon.Name">@pokemon.Name</a>
             </li>
         }
 

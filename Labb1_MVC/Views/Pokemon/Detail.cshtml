@@ -2,11 +2,13 @@
 
 <section>
     <h2>@Html.DisplayFor(model => model.Name)</h2>
-    <h3>@Html.DisplayFor(model => model.Type)</h3>
+    <hr />
+    <h3>Detaljer:</h3>
+    <br />
     <p>@Html.DisplayFor(model => model.Height) decimeter - @Html.DisplayFor(model => model.Weight) hekto</p>
     <p>Attack: @Model.Stats.FirstOrDefault(s => s.Stat?.Name == "attack")?.BaseStat</p>
-    <p>Försvar: @Model.Stats.FirstOrDefault(s => s.Stat?.Name == "defense")?.BaseStat</p>
+    <p>Defense: @Model.Stats.FirstOrDefault(s => s.Stat?.Name == "defense")?.BaseStat</p>
     <p>HP: @Model.Stats.FirstOrDefault(s => s.Stat?.Name == "hp")?.BaseStat</p>
-    
 
+    
 </section>

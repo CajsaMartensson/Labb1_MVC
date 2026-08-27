@@ -12,8 +12,7 @@ namespace Labb1_MVC.Models
         public int Height { get; set; }
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
-        [JsonPropertyName("type")]
-        public string Type { get; set; } = string.Empty;
+
         [JsonPropertyName("stats")]
         public List<PokemonStat> Stats { get; set; } = new List<PokemonStat>();
 
