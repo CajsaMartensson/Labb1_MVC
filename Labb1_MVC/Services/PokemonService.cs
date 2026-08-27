@@ -17,7 +17,7 @@ namespace Labb1_MVC.Services
         {
             try
             {
-                var response = await _httpClient.GetAsync("pokemon?limit=20");
+                var response = await _httpClient.GetAsync("pokemon");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -32,19 +32,16 @@ namespace Labb1_MVC.Services
             }
         }
 
-        internal class PokemonApiResponse()
-        {
-            [System.Text.Json.Serialization.JsonPropertyName("results")]
-            public List<Pokemon>? Results { get; set; }
-        }
 
-        public async Task<IActionResult> GetPokemonByName(string name)
+        public async Task<Pokemon> GetPokemonByName(string name)
         {
             try
             {
-                var pokemonList = GetPokemon();
+                var response = await _httpClient.GetAsync($"pokemon/{name}");
+                response.EnsureSuccessStatusCode();
 
-                pokemonList.
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<Pokemon>(json);
 
             }
             catch (Exception ex)
@@ -52,20 +49,10 @@ namespace Labb1_MVC.Services
                 return null;
             }
         }
-
-        //internal class PokemonByNameApiResponse()
-        //{
-
-        //    [System.Text.Json.Serialization.JsonPropertyName("height")]
-        //    public int Height { get; set; }
-        //    [System.Text.Json.Serialization.JsonPropertyName("weight")]
-        //    public int Weight { get; set; }
-        //    [System.Text.Json.Serialization.JsonPropertyName("type")]
-        //    public string Type { get; set; } = string.Empty;
-        //    [System.Text.Json.Serialization.JsonPropertyName("abilities")]
-        //    public List<Ability> Abilites { get; set; } = new List<Ability>();
-        //    [System.Text.Json.Serialization.JsonPropertyName("stats")]
-        //    public Stats? Stats { get; set; }
-        //}
+        internal class PokemonApiResponse()
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("results")]
+            public List<Pokemon>? Results { get; set; }
+        }
     }
 }
