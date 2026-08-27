@@ -19,10 +19,11 @@ namespace Labb1_MVC.Controllers
             return View(pokemonList);
         }
 
-        //public IActionResult Description(string name)
-        //{
-            //var pokemon = await _pokemonService.GetPokemonByName(name)
-            //return View(pokemon)
-        //}
+        public async Task<IActionResult> Description(string name)
+        {
+            var pokemon = await _pokemonService.GetPokemonByName(name);
+
+            return View(pokemon);
+        }
     }
 }
