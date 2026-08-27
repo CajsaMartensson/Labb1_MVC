@@ -15,10 +15,14 @@ namespace Labb1_MVC.Models
         public int Weight { get; set; }
         [JsonPropertyName("type")]
         public string Type { get; set; } = string.Empty;
-        [JsonPropertyName("abilities")]
-        public List<Ability> Abilites { get; set; } = new List<Ability>();
-        [JsonPropertyName("stats")]
-        public Stats? Stats { get; set; }
+        [JsonPropertyName("attack")]
+        public int Attack { get; set; }
+        [JsonPropertyName("defense")]
+        public int Defense { get; set; }
+        [JsonPropertyName("hp")]
+        public int Hp { get; set; }
+        [JsonPropertyName("speed")]
+        public int Speed { get; set; }
 
     }
 }
