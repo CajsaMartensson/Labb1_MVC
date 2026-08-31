@@ -1,14 +1,17 @@
-﻿@model Labb1_MVC.Models.Pokemon;
+﻿@model Labb1_MVC.Models.Pokemon
 
-<section>
-    <h2>@Html.DisplayFor(model => model.Name)</h2>
+<section class="p-4 m-3 bg-light border rounded shadow-sm">
+    <h2 class="display-4 fw-bold text-primary text-capitalize">@Html.DisplayFor(model => model.Name)</h2>
     <hr />
-    <h3>Detaljer:</h3>
+    <h3 class="lead text-muted fw-bold">Detaljer:</h3>
     <br />
-    <p>@Html.DisplayFor(model => model.Height) decimeter - @Html.DisplayFor(model => model.Weight) hekto</p>
-    <p>Attack: @Model.Stats.FirstOrDefault(s => s.Stat?.Name == "attack")?.BaseStat</p>
-    <p>Defense: @Model.Stats.FirstOrDefault(s => s.Stat?.Name == "defense")?.BaseStat</p>
-    <p>HP: @Model.Stats.FirstOrDefault(s => s.Stat?.Name == "hp")?.BaseStat</p>
+    <p class="fs-5 text-dark">@(Model.Height / 10.0) meter - @(Model.Weight / 10.0) kg</p>
+    @if (Model.Stats != null)
+    {
+        foreach (var pokemon in Model.Stats)
+        {
+            <p class="fw-bold text-secondary text-capitalize m-1">@pokemon.Stat?.Name = @pokemon.BaseStat</p>
+        }
+    }
 
-    
 </section>

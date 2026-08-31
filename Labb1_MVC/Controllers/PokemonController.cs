@@ -12,9 +12,16 @@ namespace Labb1_MVC.Controllers
         {
             _pokemonService = pokemonService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string query)
         {
             var pokemonList = await _pokemonService.GetPokemon();
+
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                pokemonList = pokemonList
+                        .Where(p => p.Name.Contains(query.ToLower()))
+                        .ToList();
+            }
 
             return View(pokemonList);
         }

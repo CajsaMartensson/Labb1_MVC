@@ -46,3 +46,42 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.pokemon-details-card {
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: sans-serif;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.pokemon-title {
+    color: #2c3e50;
+    margin-top: 0;
+    text-transform: capitalize;
+}
+
+.pokemon-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 15px 0;
+}
+
+.pokemon-subtitle {
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.info-text {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.stat-item {
+    font-weight: bold;
+    color: #444;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
