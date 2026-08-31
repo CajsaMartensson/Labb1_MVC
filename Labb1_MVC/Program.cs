@@ -22,17 +22,16 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseMiddleware<ErrorMiddleware>();
+app.UseStaticFiles();
 app.UseRouting();
+app.UseMiddleware<ErrorMiddleware>();
 
 app.UseAuthorization();
 
-app.MapStaticAssets();
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+    
 
 
 app.Run();

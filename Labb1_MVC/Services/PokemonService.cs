@@ -17,7 +17,7 @@ namespace Labb1_MVC.Services
         {
             try
             {
-                var response = await _httpClient.GetAsync("pokemon");
+                var response = await _httpClient.GetAsync("pokemon?limit=1300");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
