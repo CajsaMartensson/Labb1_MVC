@@ -5,7 +5,9 @@
     <hr />
     <h3 class="lead text-muted fw-bold">Detaljer:</h3>
     <br />
+
     <p class="fs-5 text-dark">@(Model.Height / 10.0) meter - @(Model.Weight / 10.0) kg</p>
+
     @if (Model.Stats != null)
     {
         foreach (var pokemon in Model.Stats)
